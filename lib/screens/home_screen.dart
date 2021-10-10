@@ -16,7 +16,8 @@ class HomeScreen extends StatelessWidget {
           // Dark / Light Theme
           Container(
               padding: const EdgeInsets.all(kDefaultPadding),
-              // decoration: const BoxDecoration(color: kDarkColor),
+              decoration:
+                  BoxDecoration(color: Theme.of(context).backgroundColor),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [

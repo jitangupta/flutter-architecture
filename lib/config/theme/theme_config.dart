@@ -5,6 +5,7 @@ import 'package:flutter_architecture/config/theme/theme_constants.dart';
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
       primaryColor: kPrimaryColor,
+      backgroundColor: Colors.grey.shade100,
       scaffoldBackgroundColor: Colors.white,
       appBarTheme:
           const AppBarTheme(backgroundColor: kPrimaryColor, elevation: 0),
@@ -19,6 +20,7 @@ ThemeData lightThemeData(BuildContext context) {
 ThemeData darkThemeData(BuildContext context) {
   return ThemeData.dark().copyWith(
       primaryColor: kPrimaryColor,
+      backgroundColor: kDarkColor,
       scaffoldBackgroundColor: kContentColorLightTheme,
       appBarTheme: const AppBarTheme(backgroundColor: kDarkColor, elevation: 0),
       iconTheme: const IconThemeData(color: kContentColorDarkTheme),
