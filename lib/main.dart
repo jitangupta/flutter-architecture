@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'config/theme/screens/home_screen.dart';
-import 'config/theme/theme_constants.dart';
+import 'package:flutter_architecture/config/theme/theme_config.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,13 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'JugaadHai',
-      theme: ThemeData(
-        // Using Nunito as font, configuration has been done into pubspec.yaml file
-        fontFamily: "Nunito",
-        scaffoldBackgroundColor: kBackgroundColor,
-        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
-        primaryColor: kPrimaryColor,
-      ),
+      theme: lightThemeData(context),
+      darkTheme: darkThemeData(context),
       home: const HomeScreen(),
     );
   }
