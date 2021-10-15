@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'JugaadHai',
+      title: 'Flutter Architecture',
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
       home: const HomeScreen(),
