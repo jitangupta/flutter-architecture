@@ -6,14 +6,16 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_architecture/flavor_config.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_architecture/main.dart';
+import 'package:flutter_architecture/main_common.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+    final config = FlavorConfig(appTitle: "Testing", logoPath: "Nothing");
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(MyApp(config: config));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

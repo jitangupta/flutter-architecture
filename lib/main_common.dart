@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_architecture/config/theme/theme_config.dart';
+import 'package:flutter_architecture/flavor_config.dart';
 import 'screens/home_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<Widget> initializeApp(FlavorConfig config) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  return MyApp(config: config);
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final FlavorConfig config;
+  const MyApp({Key? key, required this.config}) : super(key: key);
 
   // This widget is the root of your application.
   @override
