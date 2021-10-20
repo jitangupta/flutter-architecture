@@ -12,8 +12,10 @@ ThemeData lightThemeData(BuildContext context) {
       iconTheme: const IconThemeData(color: kContentColorLightTheme),
       textTheme:
           Theme.of(context).textTheme.apply(bodyColor: kContentColorLightTheme),
-      colorScheme:
-          const ColorScheme.light(primary: kPrimaryColor, error: kErrorColor));
+      colorScheme: const ColorScheme.light(
+          primary: kPrimaryColor,
+          error: kErrorColor,
+          background: kPrimaryColor));
 }
 
 // Configuring dark Theme
@@ -26,8 +28,8 @@ ThemeData darkThemeData(BuildContext context) {
       iconTheme: const IconThemeData(color: kContentColorDarkTheme),
       textTheme:
           Theme.of(context).textTheme.apply(bodyColor: kContentColorDarkTheme),
-      colorScheme: const ColorScheme.dark()
-          .copyWith(primary: kPrimaryColor, error: kErrorColor));
+      colorScheme: const ColorScheme.dark().copyWith(
+          primary: kPrimaryColor, error: kErrorColor, background: kDarkColor));
 }
 
 
