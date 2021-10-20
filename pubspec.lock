@@ -74,20 +74,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  freezed_annotation:
-    dependency: transitive
+  http:
+    dependency: "direct main"
     description:
-      name: freezed_annotation
+      name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.3"
-  json_annotation:
+    version: "0.13.4"
+  http_parser:
     dependency: transitive
     description:
-      name: json_annotation
+      name: http_parser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.3.0"
+    version: "4.0.0"
   lints:
     dependency: transitive
     description:
@@ -116,13 +116,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  riverpod:
-    dependency: "direct main"
-    description:
-      name: riverpod
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.14.0+3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -142,13 +135,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
-  state_notifier:
-    dependency: transitive
-    description:
-      name: state_notifier
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.1"
   stream_channel:
     dependency: transitive
     description:

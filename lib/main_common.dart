@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Architecture',
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
+      
       home: const HomeScreen(),
     );
   }
