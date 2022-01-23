@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_poc_app/common/menu_state.dart';
 import 'package:flutter_poc_app/screens/deal_screen.dart';
-import 'package:flutter_poc_app/screens/home_screen.dart';
+import 'package:flutter_poc_app/screens/offers_screen.dart';
 import 'package:flutter_poc_app/screens/menu_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,9 +9,6 @@ class SharedBottomNavigationBar extends StatelessWidget {
   final MenuState selectedMenu;
   const SharedBottomNavigationBar({Key? key, required this.selectedMenu})
       : super(key: key);
-
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   @override
   Widget build(BuildContext context) {
@@ -23,22 +20,22 @@ class SharedBottomNavigationBar extends StatelessWidget {
             icon: SvgPicture.asset('assets/icons/articles.svg',
                 width: 25,
                 color: selectedMenu == MenuState.article
-                    ? Colors.red
-                    : Colors.black),
+                    ? Colors.blue
+                    : Colors.blue),
             label: 'Article',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset('assets/icons/deals.svg',
                 width: 25,
                 color:
-                    selectedMenu == MenuState.deal ? Colors.red : Colors.black),
+                    selectedMenu == MenuState.deal ? Colors.blue : Colors.grey),
             label: 'Business',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset('assets/icons/menu.svg',
                 width: 25,
                 color:
-                    selectedMenu == MenuState.menu ? Colors.red : Colors.black),
+                    selectedMenu == MenuState.menu ? Colors.blue : Colors.grey),
             label: 'School',
           ),
         ],
@@ -51,7 +48,7 @@ class SharedBottomNavigationBar extends StatelessWidget {
           switch (value) {
             case 0:
               Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                  MaterialPageRoute(builder: (context) => OffersScreen()),
                   (Route<dynamic> route) => false);
               break;
 

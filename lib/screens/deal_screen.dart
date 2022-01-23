@@ -13,8 +13,6 @@ class DealScreen extends StatelessWidget {
       body: Center(
         child: Text('From deal page'),
       ),
-      bottomNavigationBar:
-          SharedBottomNavigationBar(selectedMenu: MenuState.deal),
     );
   }
 }

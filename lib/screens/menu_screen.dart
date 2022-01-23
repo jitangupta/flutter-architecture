@@ -13,8 +13,6 @@ class MenuScreen extends StatelessWidget {
       body: Center(
         child: Text('Menu Page deal page'),
       ),
-      bottomNavigationBar:
-          SharedBottomNavigationBar(selectedMenu: MenuState.menu),
     );
   }
 }
