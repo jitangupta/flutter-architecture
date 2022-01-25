@@ -29,7 +29,7 @@ class DealScreen extends StatelessWidget {
             Icons.person,
             color: Colors.brown[200],
           ),
-          title: Text(entry.title),
+          title: Text('Deals - ${entry.title}'),
           subtitle: Text(entry.description),
         ),
         const Divider()

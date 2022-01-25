@@ -1,26 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_poc_app/common/menu_state.dart';
+import 'package:flutter_pagewise/flutter_pagewise.dart';
+import 'package:flutter_poc_app/models/sample_model.dart';
+import 'package:flutter_poc_app/services/sample_service.dart';
 import 'package:flutter_poc_app/widgets/app_bar.dart';
-import 'package:flutter_poc_app/widgets/bottom_navigation_bar.dart';
 
 class OffersScreen extends StatelessWidget {
-  const OffersScreen({Key? key}) : super(key: key);
+  SampleService service = SampleService();
+  OffersScreen({Key? key}) : super(key: key);
+
+  static const int pageSize = 10;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const SharedAppBar(),
-      body: ListView.builder(
-          itemCount: 30,
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-                leading: const Icon(Icons.list),
-                trailing: const Text(
-                  "GFG",
-                  style: TextStyle(color: Colors.green, fontSize: 15),
-                ),
-                title: Text("List item $index"));
-          }),
+      body: PagewiseListView<Sample>(
+          pageSize: pageSize,
+          itemBuilder: _itemBuilder,
+          pageFuture: (pageIndex) => service.getNewItem(pageIndex!)),
+    );
+  }
+
+  Widget _itemBuilder(context, Sample entry, _) {
+    return Column(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(
+            Icons.person,
+            color: Colors.brown[200],
+          ),
+          title: Text('Offer - ${entry.text}'),
+          subtitle: Text(entry.description),
+        ),
+        const Divider()
+      ],
     );
   }
 }
