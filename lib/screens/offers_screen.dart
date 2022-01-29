@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pagewise/flutter_pagewise.dart';
+import 'package:flutter_poc_app/helpers/hide_navbar.dart';
 import 'package:flutter_poc_app/models/sample_model.dart';
 import 'package:flutter_poc_app/services/sample_service.dart';
 import 'package:flutter_poc_app/widgets/app_bar.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_poc_app/widgets/app_bar.dart';
 class OffersScreen extends StatelessWidget {
   SampleService service = SampleService();
   OffersScreen({Key? key}) : super(key: key);
+  final HideNavbar hiding = HideNavbar();
 
   static const int pageSize = 10;
 
@@ -15,6 +17,7 @@ class OffersScreen extends StatelessWidget {
     return Scaffold(
       appBar: const SharedAppBar(),
       body: PagewiseListView<Sample>(
+          controller: hiding.controller,
           pageSize: pageSize,
           itemBuilder: _itemBuilder,
           pageFuture: (pageIndex) => service.getNewItem(pageIndex!)),
